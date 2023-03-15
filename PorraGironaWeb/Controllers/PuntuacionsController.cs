@@ -34,13 +34,18 @@ namespace PorraGironaWeb.Controllers
         {
             if (NivellAcces() == 0 || NivellAcces() == 5)
             {
-
-                return View(await _context.Puntuacions.OrderByDescending(p => p.Puntuacio).ToListAsync());
+                List<Puntuacion> llista_puntuacions =_context.Puntuacions.FromSqlRaw("SELECT * FROM puntuacions").ToList();
+                llista_puntuacions.RemoveAll(puntuacio_aux => puntuacio_aux.Puntuacio == 0);
+                var llista_puntuacions_task = await Task.Run(() => llista_puntuacions);
+                return View(llista_puntuacions_task.OrderByDescending(p=> p.Puntuacio));
+               // return View(await _context.Puntuacions.OrderByDescending(p => p.Puntuacio).ToListAsync());
             }
             // si no redireccionem a la plana principal
 
             else
-                return RedirectToAction("Index", "Login");
+                
+            return RedirectToAction("Index", "Login");
+           
 
         }
 

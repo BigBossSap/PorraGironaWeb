@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Partits</h1>
 
 @*<p>
     <a asp-action="Create">Create New</a>
@@ -68,13 +68,13 @@
                 @Html.DisplayFor(modelItem => item.Jornada)
             </td>
             <th>
-                @Html.DisplayNameFor(modelItem => item.IdequiplocalNavigation.Nom)
+                @Html.DisplayFor(modelItem => item.IdequiplocalNavigation.Nom)
             </th>
             <td>
                 @Html.DisplayFor(modelItem => item.Golslocal)
             </td>
             <th>
-                @Html.DisplayNameFor(modelItem => item.IdequipvisitantNavigation.Nom)
+                @Html.DisplayFor(modelItem => item.IdequipvisitantNavigation.Nom)
             </th>
             <td>
                 @Html.DisplayFor(modelItem => item.Golsvisitant)

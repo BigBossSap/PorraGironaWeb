@@ -1,0 +1,106 @@
+﻿@model IEnumerable<PorraGironaWeb.Models.Entity.Partit>
+
+@{
+    ViewData["Title"] = "Partits";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Datainici)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jornada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdequiplocalNavigation.Nom)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.IdequiplocalNavigation.Nom)
+        </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Golslocal)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.IdequipvisitantNavigation.Nom)
+        </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.IdequipvisitantNavigation.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Golsvisitant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Finalitzat)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Temporada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idsjugadorslocal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idsjugadorsvisitant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdequiplocalNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdequipvisitantNavigation)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datainici)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jornada)
+            </td>
+            <th>
+                @Html.DisplayNameFor(modelItem => item.IdequiplocalNavigation.Nom)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Golslocal)
+            </td>
+            <th>
+                @Html.DisplayNameFor(modelItem => item.IdequipvisitantNavigation.Nom)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Golsvisitant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Finalitzat)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Temporada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idsjugadorslocal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idsjugadorsvisitant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdequiplocalNavigation.Idequip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdequipvisitantNavigation.Idequip)
+            </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idpartit">Edit</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

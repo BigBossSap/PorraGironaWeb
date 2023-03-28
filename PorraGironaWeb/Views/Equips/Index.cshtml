@@ -1,0 +1,48 @@
+﻿@model IEnumerable<PorraGironaWeb.Models.Entity.Equip>
+
+@{
+    ViewData["Title"] = "Equips";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Equips</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                
+                @Html.DisplayNameFor(model => model.Imatge)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                   @{ string base64String = Convert.ToBase64String(item.Imatge);
+                    string imgSrc = String.Format("data:image/gif;base64,{0}", base64String);
+                     <img src="@imgSrc" alt="Equip Image" />
+                    }
+            </td>
+
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idequip">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Idequip">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Idequip">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
